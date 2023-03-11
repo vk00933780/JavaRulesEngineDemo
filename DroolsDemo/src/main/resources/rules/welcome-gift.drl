@@ -1,0 +1,34 @@
+import com.drools.demo.model.Customer;
+import com.drools.demo.model.Gift;
+
+rule "Family welcome gift"
+    when
+        $c : Customer(customerType == "Family")
+    then
+        Gift welcomeGift = new Gift(101, "Family Welcome Gift", "A family-sized picnic basket");
+        insert(welcomeGift);
+end;
+
+rule "Individual welcome gift"
+    when
+        $c : Customer(customerType == "Individual")
+    then
+        Gift welcomeGift = new Gift(102, "Individual Welcome Gift", "A travel-sized toiletry kit");
+        insert(welcomeGift);
+end;
+
+rule "Elite welcome gift"
+    when
+        $c : Customer(customerType == "Elite")
+    then
+        Gift welcomeGift = new Gift(103, "Elite Welcome Gift", "A deluxe leather passport holder");
+        insert(welcomeGift);
+end;
+
+rule "Royal welcome gift"
+    when
+        $c : Customer(customerType == "Royal")
+    then
+        Gift welcomeGift = new Gift(104, "Royal Welcome Gift", "A bottle of vintage champagne and a set of crystal champagne flutes");
+        insert(welcomeGift);
+end;

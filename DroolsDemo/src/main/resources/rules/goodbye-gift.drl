@@ -1,0 +1,19 @@
+package rules
+
+import com.drools.demo.model.Customer
+import com.drools.demo.model.Gift
+
+rule "Family goodbye gift"
+    when
+        $c : Customer(customerType == "Family")
+    then
+        Gift goodbyeGift = new Gift(105, "Family Goodbye Gift", "A family photo album")
+        insert(goodbyeGift)
+end
+
+rule "Individual goodbye gift"
+    when
+        $c : Customer(customerType == "Individual")
+    then
+        Gift goodbyeGift = new Gift(106, "Individual Goodbye Gift", "A personalized luggage tag")
+        insert(goodbyeGift
