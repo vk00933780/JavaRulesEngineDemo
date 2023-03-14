@@ -3,7 +3,6 @@ package com.drools.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,27 +12,30 @@ import com.drools.demo.model.Gift;
 
 @Service
 public class GiftRecommendationService {
+
+	@Autowired
+	KieSession welcomeGiftSession;
 	
 	@Autowired
-	KieContainer kieContainer;
+	KieSession goodbyeGiftSession;
 
     public Customer getWelcomeGifts(Customer customer) {
-        KieSession kieSession = kieContainer.newKieSession();
-        kieSession.insert(customer);
-        kieSession.fireAllRules();
-        List<Gift> gifts = getGiftsFromWorkingMemory(kieSession);
-       kieSession.dispose();
+       // KieSession kieSession = kieContainer.newKieSession();
+    	welcomeGiftSession.insert(customer);
+    	welcomeGiftSession.fireAllRules();
+        List<Gift> gifts = getGiftsFromWorkingMemory(welcomeGiftSession);
+        welcomeGiftSession.dispose();
         
         customer.setGifts(gifts);
         return customer;
     }
 
     public Customer getGoodbyeGifts(Customer customer) {
-        KieSession kieSession = kieContainer.newKieSession("GoodbyeGiftSession");
-        kieSession.insert(customer);
-        kieSession.fireAllRules();
-        List<Gift> gifts = getGiftsFromWorkingMemory(kieSession);
-        kieSession.dispose();
+       // KieSession kieSession = kieContainer.newKieSession();
+    	goodbyeGiftSession.insert(customer);
+    	goodbyeGiftSession.fireAllRules();
+        List<Gift> gifts = getGiftsFromWorkingMemory(goodbyeGiftSession);
+        goodbyeGiftSession.dispose();
         
         customer.setGifts(gifts);
         return customer;

@@ -1,3 +1,5 @@
+package com.drools.rules.goodbye
+
 import com.drools.demo.model.Customer;
 import com.drools.demo.model.Gift;
 

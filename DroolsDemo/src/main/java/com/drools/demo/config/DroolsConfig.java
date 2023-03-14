@@ -15,11 +15,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DroolsConfig {
 
-    @Bean
+   /* @Bean
     public KieFileSystem kieFileSystem() throws IOException {
         KieFileSystem kieFileSystem = KieServices.Factory.get().newKieFileSystem();
         kieFileSystem.write(ResourceFactory.newClassPathResource("rules/welcome-gift.drl"));
-        //kieFileSystem.write(ResourceFactory.newClassPathResource("rules/goodbye-gift.drl"));
+        kieFileSystem.write(ResourceFactory.newClassPathResource("rules/goodbye-gift.drl"));
         return kieFileSystem;
     }
 
@@ -35,17 +35,23 @@ public class DroolsConfig {
         KieContainer kieContainer = kieServices.newKieContainer(kieRepository.getDefaultReleaseId());
         return kieContainer;
     }
-
+*/
     @Bean
     public KieSession welcomeGiftSession() throws IOException {
-        KieSession kieSession = kieContainer().newKieSession();
-        return kieSession;
+       // KieSession kieSession = kieContainer().newKieSession();
+        KieServices ks = KieServices.Factory.get();
+	    KieContainer kContainer = ks.getKieClasspathContainer();
+    	KieSession kSession = kContainer.newKieSession("welcome-rules");
+        return kSession;
     }
 
-   /* @Bean
+    @Bean
     public KieSession goodbyeGiftSession() throws IOException {
-        KieSession kieSession = kieContainer().newKieSession();
-        return kieSession;
-    }*/
+       // KieSession kieSession = kieContainer().newKieSession();
+        KieServices ks = KieServices.Factory.get();
+	    KieContainer kContainer = ks.getKieClasspathContainer();
+    	KieSession kSession = kContainer.newKieSession("goodbye-rules");
+        return kSession;
+    }
 
 }
