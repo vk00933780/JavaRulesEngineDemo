@@ -38,7 +38,6 @@ public class DroolsConfig {
 */
     @Bean
     public KieSession welcomeGiftSession() throws IOException {
-       // KieSession kieSession = kieContainer().newKieSession();
         KieServices ks = KieServices.Factory.get();
 	    KieContainer kContainer = ks.getKieClasspathContainer();
     	KieSession kSession = kContainer.newKieSession("welcome-rules");
@@ -47,7 +46,6 @@ public class DroolsConfig {
 
     @Bean
     public KieSession goodbyeGiftSession() throws IOException {
-       // KieSession kieSession = kieContainer().newKieSession();
         KieServices ks = KieServices.Factory.get();
 	    KieContainer kContainer = ks.getKieClasspathContainer();
     	KieSession kSession = kContainer.newKieSession("goodbye-rules");
