@@ -5,7 +5,7 @@ import com.drools.demo.model.Gift;
 
 rule "Family goodbye gift"
     when
-        $c : Customer(customerType == "Family")
+        $c : Customer(category == "Family")
     then
         Gift goodbyeGift = new Gift(105, "Family Goodbye Gift", "A family photo album");
         insert(goodbyeGift);
@@ -13,7 +13,7 @@ end;
 
 rule "Individual goodbye gift"
     when
-        $c : Customer(customerType == "Individual")
+        $c : Customer(category == "Individual")
     then
         Gift goodbyeGift = new Gift(106, "Individual Goodbye Gift", "A personalized luggage tag");
         insert(goodbyeGift);
@@ -21,7 +21,7 @@ end;
 
 rule "Elite goodbye gift"
     when
-        $c : Customer(customerType == "Elite")
+        $c : Customer(category == "Elite")
     then
         Gift welcomeGift = new Gift(107, "Elite Goodbye Gift", "A Complementary night in Hotel including a delicacies in the farewell gift");
         insert(welcomeGift);
@@ -29,7 +29,7 @@ end;
 
 rule "Royal goodbye gift"
     when
-        $c : Customer(customerType == "Royal")
+        $c : Customer(category == "Royal")
     then
         Gift welcomeGift = new Gift(108, "Royal Goodbye Gift", "Year of Netflix premium membership");
         insert(welcomeGift);

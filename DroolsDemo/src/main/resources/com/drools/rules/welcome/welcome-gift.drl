@@ -5,32 +5,114 @@ import com.drools.demo.model.Gift;
 
 rule "Family welcome gift"
     when
-        $c : Customer(customerType == "Family")
+        $c : Customer(category == "family")
     then
         Gift welcomeGift = new Gift(101, "Family Welcome Gift", "A family-sized picnic basket");
         insert(welcomeGift);
-end;
+end
 
 rule "Individual welcome gift"
     when
-        $c : Customer(customerType == "Individual")
+        $c : Customer(category == "individual")
     then
         Gift welcomeGift = new Gift(102, "Individual Welcome Gift", "A travel-sized toiletry kit");
         insert(welcomeGift);
-end;
+end
 
-rule "Elite welcome gift"
+rule "Welcome Gift - VVIP Male Bachelor Beach"
     when
-        $c : Customer(customerType == "Elite")
+        $c : Customer(personality == "VVIP", gender == "Male", category == "bachelor", preferences contains "Beach")
     then
-        Gift welcomeGift = new Gift(103, "Elite Welcome Gift", "A deluxe leather passport holder");
+    	Gift welcomeGift = new Gift(111, "Welcome Gift - VVIP Male Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
         insert(welcomeGift);
-end;
+       
+end
 
-rule "Royal welcome gift"
+rule "Welcome Gift - VVIP Male Bachelor Adventure"
     when
-        $c : Customer(customerType == "Royal")
+        $c : Customer(personality == "VVIP", gender == "Male", category == "bachelor", preferences contains "Adventure")
     then
-        Gift welcomeGift = new Gift(104, "Royal Welcome Gift", "A bottle of vintage champagne and a set of crystal champagne flutes");
+    	Gift welcomeGift = new Gift(112, "Welcome Gift - VVIP Male Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
         insert(welcomeGift);
-end;
+end
+
+rule "Welcome Gift - VVIP Male Bachelor City"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "bachelor", preferences contains "City")
+    then
+    	Gift welcomeGift = new Gift(113, "Welcome Gift - VVIP Male Bachelor City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - VVIP Male Honeymooner Beach"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "honeymooner", preferences contains "Beach")
+    then
+    	Gift welcomeGift = new Gift(114, "Welcome Gift - VVIP Male Honeymooner Beach", "Complimentary Airport Transfer and Private Beach Dinner Setup");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - VVIP Male Honeymooner Adventure"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "honeymooner", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(115, "Welcome Gift - VVIP Male Honeymooner Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - VVIP Male Honeymooner City"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "honeymooner", preferences contains "City")
+    then
+    	Gift welcomeGift = new Gift(116, "Welcome Gift - VVIP Male Honeymooner City", "Complimentary Airport Transfer and Romantic City Tour");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - VVIP Male Family Beach"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "family", preferences contains "Beach")
+    then
+    Gift welcomeGift = new Gift(117, "Welcome Gift - VVIP Male Family Beach", "Complimentary Airport Transfer and Family Beach Access");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - VVIP Male Family Adventure"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "family", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(118, "Welcome Gift - VVIP Male Family Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - VVIP Male Family City"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "family", preferences contains "City")
+    then
+    	Gift welcomeGift = new Gift(119, "Welcome Gift - VVIP Male Family City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - VVIP Female Bachelor Beach"
+    when
+        $c : Customer(personality == "VVIP", gender == "Female", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift welcomeGift = new Gift(120, "Welcome Gift - VVIP Female Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(welcomeGift);
+    
+end
+
+rule "Welcome Gift - VVIP Female Bachelor Adventure"
+    when
+        $c : Customer(personality == "VVIP", gender == "Female", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(121, "Welcome Gift - VVIP Female Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+end
+

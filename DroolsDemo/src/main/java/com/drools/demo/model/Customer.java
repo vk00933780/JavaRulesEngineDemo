@@ -28,7 +28,9 @@ public class Customer {
 	private String maritalStatus;
 	private String ethnicity;
 	private String hobbies;
-	private String customerType;
+	private String category;
+	private String personality;
+	private List<String> preferences;
 	private int primaryGuestId;
 	private String primaryGuestRelationship;
 	private String createdDate;

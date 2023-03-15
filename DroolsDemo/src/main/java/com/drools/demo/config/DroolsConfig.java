@@ -36,20 +36,11 @@ public class DroolsConfig {
         return kieContainer;
     }
 */
-    @Bean
-    public KieSession welcomeGiftSession() throws IOException {
+	
+	@Bean
+    public KieContainer kieContainer() throws IOException {
         KieServices ks = KieServices.Factory.get();
-	    KieContainer kContainer = ks.getKieClasspathContainer();
-    	KieSession kSession = kContainer.newKieSession("welcome-rules");
-        return kSession;
-    }
-
-    @Bean
-    public KieSession goodbyeGiftSession() throws IOException {
-        KieServices ks = KieServices.Factory.get();
-	    KieContainer kContainer = ks.getKieClasspathContainer();
-    	KieSession kSession = kContainer.newKieSession("goodbye-rules");
-        return kSession;
+        return ks.getKieClasspathContainer();
     }
 
 }
