@@ -7,15 +7,15 @@ rule "Family welcome gift"
     when
         $c : Customer(category == "family")
     then
-        Gift welcomeGift = new Gift(101, "Family Welcome Gift", "A family-sized picnic basket");
+        Gift welcomeGift = new Gift(101, "Only Family Welcome Gift", "A family-sized picnic basket");
         insert(welcomeGift);
 end
 
 rule "Individual welcome gift"
     when
-        $c : Customer(category == "individual")
+        $c : Customer(category == "bachelor")
     then
-        Gift welcomeGift = new Gift(102, "Individual Welcome Gift", "A travel-sized toiletry kit");
+        Gift welcomeGift = new Gift(102, "Only Bachelor Welcome Gift", "A travel-sized toiletry kit");
         insert(welcomeGift);
 end
 
@@ -113,6 +113,203 @@ rule "Welcome Gift - VVIP Female Bachelor Adventure"
         $c : Customer(personality == "VVIP", gender == "Female", category == "bachelor", preferences contains "Adventure")
     then
     	Gift welcomeGift = new Gift(121, "Welcome Gift - VVIP Female Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+end
+
+
+
+rule "Welcome Gift - HNWIs Male Bachelor Beach"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift welcomeGift = new Gift(122, "Welcome Gift - HNWIs Male Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - HNWIs Male Bachelor Adventure"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(123, "Welcome Gift - HNWIs Male Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+end
+
+rule "Welcome Gift - HNWIs Male Bachelor City"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "bachelor", preferences contains "City")
+    then
+    	Gift welcomeGift = new Gift(124, "Welcome Gift - HNWIs Male Bachelor City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - HNWIs Male Honeymooner Beach"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "honeymooner", preferences contains "Beach")
+    then
+    	Gift welcomeGift = new Gift(125, "Welcome Gift - HNWIs Male Honeymooner Beach", "Complimentary Airport Transfer and Private Beach Dinner Setup");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - HNWIs Male Honeymooner Adventure"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "honeymooner", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(126, "Welcome Gift - HNWIs Male Honeymooner Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - HNWIs Male Honeymooner City"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "honeymooner", preferences contains "City")
+    then
+    	Gift welcomeGift = new Gift(127, "Welcome Gift - HNWIs Male Honeymooner City", "Complimentary Airport Transfer and Romantic City Tour");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - HNWIs Male Family Beach"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "family", preferences contains "Beach")
+    then
+    Gift welcomeGift = new Gift(128, "Welcome Gift - HNWIs Male Family Beach", "Complimentary Airport Transfer and Family Beach Access");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - HNWIs Male Family Adventure"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "family", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(129, "Welcome Gift - HNWIs Male Family Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - HNWIs Male Family City"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "family", preferences contains "City")
+    then
+    	Gift welcomeGift = new Gift(130, "Welcome Gift - HNWIs Male Family City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - HNWIs Female Bachelor Beach"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Female", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift welcomeGift = new Gift(131, "Welcome Gift - HNWIs Female Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(welcomeGift);
+    
+end
+
+rule "Welcome Gift - HNWIs Female Bachelor Adventure"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Female", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(132, "Welcome Gift - HNWIs Female Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+end
+
+
+rule "Welcome Gift - Govt Official Male Bachelor Beach"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift welcomeGift = new Gift(133, "Welcome Gift - Govt Official Male Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - Govt Official Male Bachelor Adventure"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(134, "Welcome Gift - Govt Official Male Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+end
+
+rule "Welcome Gift - Govt Official Male Bachelor City"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "bachelor", preferences contains "City")
+    then
+    	Gift welcomeGift = new Gift(135, "Welcome Gift - Govt Official Male Bachelor City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - Govt Official Male Honeymooner Beach"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "honeymooner", preferences contains "Beach")
+    then
+    	Gift welcomeGift = new Gift(136, "Welcome Gift - Govt Official Male Honeymooner Beach", "Complimentary Airport Transfer and Private Beach Dinner Setup");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - Govt Official Male Honeymooner Adventure"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "honeymooner", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(137, "Welcome Gift - Govt Official Male Honeymooner Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - Govt Official Male Honeymooner City"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "honeymooner", preferences contains "City")
+    then
+    	Gift welcomeGift = new Gift(138, "Welcome Gift - Govt Official Male Honeymooner City", "Complimentary Airport Transfer and Romantic City Tour");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - Govt Official Male Family Beach"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "family", preferences contains "Beach")
+    then
+    Gift welcomeGift = new Gift(139, "Welcome Gift - Govt Official Male Family Beach", "Complimentary Airport Transfer and Family Beach Access");
+        insert(welcomeGift);
+        
+end
+
+rule "Welcome Gift - Govt Official Male Family Adventure"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "family", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(140, "Welcome Gift - Govt Official Male Family Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - Govt Official Male Family City"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "family", preferences contains "City")
+    then
+    	Gift welcomeGift = new Gift(141, "Welcome Gift - Govt Official Male Family City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(welcomeGift);
+       
+end
+
+rule "Welcome Gift - Govt Official Female Bachelor Beach"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Female", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift welcomeGift = new Gift(142, "Welcome Gift - Govt Official Female Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(welcomeGift);
+    
+end
+
+rule "Welcome Gift - Govt Official Female Bachelor Adventure"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Female", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift welcomeGift = new Gift(143, "Welcome Gift - Govt Official Female Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
         insert(welcomeGift);
 end
 

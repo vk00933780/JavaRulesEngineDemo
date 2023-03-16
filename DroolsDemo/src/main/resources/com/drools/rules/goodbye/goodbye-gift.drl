@@ -3,34 +3,313 @@ package com.drools.rules.goodbye
 import com.drools.demo.model.Customer;
 import com.drools.demo.model.Gift;
 
-rule "Family goodbye gift"
+rule "Family GoodBye gift"
     when
-        $c : Customer(category == "Family")
+        $c : Customer(category == "family")
     then
-        Gift goodbyeGift = new Gift(105, "Family Goodbye Gift", "A family photo album");
-        insert(goodbyeGift);
-end;
+        Gift GoodByeGift = new Gift(144, "Only Family GoodBye Gift", "A family-sized picnic basket");
+        insert(GoodByeGift);
+end
 
-rule "Individual goodbye gift"
+rule "Individual GoodBye gift"
     when
-        $c : Customer(category == "Individual")
+        $c : Customer(category == "bachelor")
     then
-        Gift goodbyeGift = new Gift(106, "Individual Goodbye Gift", "A personalized luggage tag");
-        insert(goodbyeGift);
-end;
+        Gift GoodByeGift = new Gift(145, "Only Bachelor GoodBye Gift", "A travel-sized toiletry kit");
+        insert(GoodByeGift);
+end
 
-rule "Elite goodbye gift"
+rule "GoodBye Gift - VVIP Male Bachelor Beach"
     when
-        $c : Customer(category == "Elite")
+        $c : Customer(personality == "VVIP", gender == "Male", category == "bachelor", preferences contains "Beach")
     then
-        Gift welcomeGift = new Gift(107, "Elite Goodbye Gift", "A Complementary night in Hotel including a delicacies in the farewell gift");
-        insert(welcomeGift);
-end;
+    	Gift GoodByeGift = new Gift(146, "GoodBye Gift - VVIP Male Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(GoodByeGift);
+       
+end
 
-rule "Royal goodbye gift"
+rule "GoodBye Gift - VVIP Male Bachelor Adventure"
     when
-        $c : Customer(category == "Royal")
+        $c : Customer(personality == "VVIP", gender == "Male", category == "bachelor", preferences contains "Adventure")
     then
-        Gift welcomeGift = new Gift(108, "Royal Goodbye Gift", "Year of Netflix premium membership");
-        insert(welcomeGift);
-end;
+    	Gift GoodByeGift = new Gift(147, "GoodBye Gift - VVIP Male Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+end
+
+rule "GoodBye Gift - VVIP Male Bachelor City"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "bachelor", preferences contains "City")
+    then
+    	Gift GoodByeGift = new Gift(148, "GoodBye Gift - VVIP Male Bachelor City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - VVIP Male Honeymooner Beach"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "honeymooner", preferences contains "Beach")
+    then
+    	Gift GoodByeGift = new Gift(149, "GoodBye Gift - VVIP Male Honeymooner Beach", "Complimentary Airport Transfer and Private Beach Dinner Setup");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - VVIP Male Honeymooner Adventure"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "honeymooner", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(150, "GoodBye Gift - VVIP Male Honeymooner Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - VVIP Male Honeymooner City"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "honeymooner", preferences contains "City")
+    then
+    	Gift GoodByeGift = new Gift(151, "GoodBye Gift - VVIP Male Honeymooner City", "Complimentary Airport Transfer and Romantic City Tour");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - VVIP Male Family Beach"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "family", preferences contains "Beach")
+    then
+    Gift GoodByeGift = new Gift(152, "GoodBye Gift - VVIP Male Family Beach", "Complimentary Airport Transfer and Family Beach Access");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - VVIP Male Family Adventure"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "family", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(153, "GoodBye Gift - VVIP Male Family Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - VVIP Male Family City"
+    when
+        $c : Customer(personality == "VVIP", gender == "Male", category == "family", preferences contains "City")
+    then
+    	Gift GoodByeGift = new Gift(154, "GoodBye Gift - VVIP Male Family City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - VVIP Female Bachelor Beach"
+    when
+        $c : Customer(personality == "VVIP", gender == "Female", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift GoodByeGift = new Gift(155, "GoodBye Gift - VVIP Female Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(GoodByeGift);
+    
+end
+
+rule "GoodBye Gift - VVIP Female Bachelor Adventure"
+    when
+        $c : Customer(personality == "VVIP", gender == "Female", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(156, "GoodBye Gift - VVIP Female Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+end
+
+
+
+rule "GoodBye Gift - HNWIs Male Bachelor Beach"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift GoodByeGift = new Gift(157, "GoodBye Gift - HNWIs Male Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - HNWIs Male Bachelor Adventure"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(158, "GoodBye Gift - HNWIs Male Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+end
+
+rule "GoodBye Gift - HNWIs Male Bachelor City"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "bachelor", preferences contains "City")
+    then
+    	Gift GoodByeGift = new Gift(159, "GoodBye Gift - HNWIs Male Bachelor City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - HNWIs Male Honeymooner Beach"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "honeymooner", preferences contains "Beach")
+    then
+    	Gift GoodByeGift = new Gift(160, "GoodBye Gift - HNWIs Male Honeymooner Beach", "Complimentary Airport Transfer and Private Beach Dinner Setup");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - HNWIs Male Honeymooner Adventure"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "honeymooner", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(161, "GoodBye Gift - HNWIs Male Honeymooner Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - HNWIs Male Honeymooner City"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "honeymooner", preferences contains "City")
+    then
+    	Gift GoodByeGift = new Gift(162, "GoodBye Gift - HNWIs Male Honeymooner City", "Complimentary Airport Transfer and Romantic City Tour");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - HNWIs Male Family Beach"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "family", preferences contains "Beach")
+    then
+    Gift GoodByeGift = new Gift(163, "GoodBye Gift - HNWIs Male Family Beach", "Complimentary Airport Transfer and Family Beach Access");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - HNWIs Male Family Adventure"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "family", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(164, "GoodBye Gift - HNWIs Male Family Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - HNWIs Male Family City"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Male", category == "family", preferences contains "City")
+    then
+    	Gift GoodByeGift = new Gift(165, "GoodBye Gift - HNWIs Male Family City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - HNWIs Female Bachelor Beach"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Female", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift GoodByeGift = new Gift(166, "GoodBye Gift - HNWIs Female Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(GoodByeGift);
+    
+end
+
+rule "GoodBye Gift - HNWIs Female Bachelor Adventure"
+    when
+        $c : Customer(personality == "HNWIs", gender == "Female", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(167, "GoodBye Gift - HNWIs Female Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+end
+
+
+rule "GoodBye Gift - Govt Official Male Bachelor Beach"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift GoodByeGift = new Gift(168, "GoodBye Gift - Govt Official Male Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - Govt Official Male Bachelor Adventure"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(169, "GoodBye Gift - Govt Official Male Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+end
+
+rule "GoodBye Gift - Govt Official Male Bachelor City"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "bachelor", preferences contains "City")
+    then
+    	Gift GoodByeGift = new Gift(170, "GoodBye Gift - Govt Official Male Bachelor City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - Govt Official Male Honeymooner Beach"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "honeymooner", preferences contains "Beach")
+    then
+    	Gift GoodByeGift = new Gift(171, "GoodBye Gift - Govt Official Male Honeymooner Beach", "Complimentary Airport Transfer and Private Beach Dinner Setup");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - Govt Official Male Honeymooner Adventure"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "honeymooner", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(172, "GoodBye Gift - Govt Official Male Honeymooner Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - Govt Official Male Honeymooner City"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "honeymooner", preferences contains "City")
+    then
+    	Gift GoodByeGift = new Gift(173, "GoodBye Gift - Govt Official Male Honeymooner City", "Complimentary Airport Transfer and Romantic City Tour");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - Govt Official Male Family Beach"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "family", preferences contains "Beach")
+    then
+    Gift GoodByeGift = new Gift(174, "GoodBye Gift - Govt Official Male Family Beach", "Complimentary Airport Transfer and Family Beach Access");
+        insert(GoodByeGift);
+        
+end
+
+rule "GoodBye Gift - Govt Official Male Family Adventure"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "family", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(175, "GoodBye Gift - Govt Official Male Family Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - Govt Official Male Family City"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Male", category == "family", preferences contains "City")
+    then
+    	Gift GoodByeGift = new Gift(176, "GoodBye Gift - Govt Official Male Family City", "Complimentary Airport Transfer and City Tour Passes");
+        insert(GoodByeGift);
+       
+end
+
+rule "GoodBye Gift - Govt Official Female Bachelor Beach"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Female", category == "bachelor", preferences contains "Beach")
+    then
+    	Gift GoodByeGift = new Gift(177, "GoodBye Gift - Govt Official Female Bachelor Beach", "Complimentary Airport Transfer and Beach Resort Access");
+        insert(GoodByeGift);
+    
+end
+
+rule "GoodBye Gift - Govt Official Female Bachelor Adventure"
+    when
+        $c : Customer(personality == "Govt Official", gender == "Female", category == "bachelor", preferences contains "Adventure")
+    then
+    	Gift GoodByeGift = new Gift(178, "GoodBye Gift - Govt Official Female Bachelor Adventure", "Complimentary Airport Transfer and Adventure Activity Package");
+        insert(GoodByeGift);
+end
+
