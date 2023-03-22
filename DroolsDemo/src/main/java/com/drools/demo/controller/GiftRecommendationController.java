@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.drools.demo.model.Customer;
-import com.drools.demo.service.GiftRecommendationService;
+import com.drools.demo.service.GiftRecommendationServiceImpl;
 
 import lombok.AllArgsConstructor;
 
@@ -15,7 +15,7 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class GiftRecommendationController {
 	
-    private GiftRecommendationService giftRecommendationService;
+    private GiftRecommendationServiceImpl giftRecommendationService;
 
    /* public GiftRecommendationController(GiftRecommendationService giftService) {
         this.giftService = giftService;

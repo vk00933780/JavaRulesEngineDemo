@@ -14,7 +14,7 @@ public class Customer {
 	private int customerId;
 	private String customerFirstName;
 	private String customerLastName;
-	//private String customerMiddleName;
+	private String customerMiddleName;
 	//private String preferredName;
 	private String primaryContactNumber;
 	//private String secondaryContactNumner;
